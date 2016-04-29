@@ -8,16 +8,20 @@ Haproxy
   |----------------
   |               |
   v               v
-_______         ________________
-Varnish         Flask (socketio)
-  |               |--------------------------------
-  |               |               |               |
-  v               |               v               v
-____________      |             _____           _______________
-Flask (http)      |             Redis -------> Python RabbitMQ
-  |               |                               |
-  |               |                               |
-  v               v                               v
-____________________________________________________
+_______         ___________________
+Varnish         Flask
+(1 min cache)   (socketio+RabbitMQ)
+  |               |      |
+  v               |      v
+_______________   |    _____       
+Flask             |    Redis
+(http+RabbitMQ)   |
+  |     |         |
+  |     v         |
+  |   _____       |
+  |   Redis       |
+  |               |
+  v               v
+____________________________________________
 database (Cassandra, Google Datastore, etc.)
 ```
