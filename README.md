@@ -3,14 +3,15 @@ cms as fast as a bullet
 
 Tech stack:
 ```
-_______
+_________________________
 Haproxy
+(load balancer+anti-ddos)
   |----------------
   |               |
   v               v
 _______         ___________________
 Varnish         Flask
-(1 min cache)   (socketio+RabbitMQ)
+(cache)         (socketio+RabbitMQ)
   |               |      |
   v               |      v
 _______________   |    _____       
