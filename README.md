@@ -2,6 +2,7 @@
 cms as fast as a bullet
 
 Tech stack:
+```
 _______
 Haproxy
   |----------------
@@ -19,3 +20,4 @@ Flask (http)      |             Redis -------> Python RabbitMQ
   v               v                               v
 ____________________________________________________
 database (Cassandra, Google Datastore, etc.)
+```
