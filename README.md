@@ -5,16 +5,16 @@ Tech stack:
 ```
 _________________________
 Haproxy
-(load balancer+anti-ddos)-------
+(load-balancer+anti-ddos)-------
   |                            |
   v                            v
-_______                _____________________________________
-Varnish                Flask Websockets Server
-(cache)                (gunicorn+meinheld-websockets+celery)
+_______                ______________________
+Varnish                Node Websockets Server
+(cache)                (SocketIO)----------
   |                         |      |      |
   v                         |      v      |
 __________________________  |    _____    |
-Flask Website API           |    Redis    |
+Falcon Website API          |    Redis    |
 (gunicorn+meinheld+celery)  |             v
   |     |     |             |         ________
   |     v     |             |         RabbitMQ
