@@ -3,18 +3,18 @@ cms as fast as a bullet
 
 Tech stack:
 ```
-__________________________
+_________________________
 Haproxy
 (load balancer+anti-ddos)-------
   |                            |
   v                            v
-_______                _____________________
-Varnish                Flask
-(cache)                (meinheld-websockets)
+_______                _____________________________________
+Varnish                Flask Websockets Server
+(cache)                (gunicorn+meinheld-websockets+celery)
   |                         |      |      |
   v                         |      v      |
 __________________________  |    _____    |
-Flask                       |    Redis    |
+Flask Website API           |    Redis    |
 (gunicorn+meinheld+celery)  |             v
   |     |     |             |         ________
   |     v     |             |         RabbitMQ
