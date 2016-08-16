@@ -8,22 +8,22 @@ Haproxy
 (load-balancer+anti-ddos)-------
   |                            |
   v                            v
-_______                ______________________
+____________           ______________________
 Varnish                Node Websockets Server
-(cache)                (SocketIO)----------
-  |                         |      |      |
-  v                         |      v      |
-__________________________  |    _____    |
-Falcon Website API          |    Redis    |
-(gunicorn+meinheld+celery)  |             v
-  |     |     |             |         ________
-  |     v     |             |         RabbitMQ
-  |   _____   |             |
-  |   Redis   |             |
-  |           v             |
-  |       ________          |
-  |       RabbitMQ          |
-  v                         v
+(http cache)           (SocketIO)
+  |                     |       |
+  v                     |       |
+________________        |       |
+Node API Server         |       |
+(Koajs + Preact)        |       |
+  |         |           |       |
+  |         |           |       |
+  |         |           v       |
+  |         |     _______       |
+  |         |---> Redis         |
+  |               (cache)       |
+  |                             |
+  v                             v
 ____________________________________________
 database (Cassandra, Google Datastore, etc.)
 ```
