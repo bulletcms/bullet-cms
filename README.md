@@ -15,12 +15,12 @@ Varnish                Node Websockets Server
   v                     |       |
 ________________        |       |
 Node API Server         |       |
-(Koajs + Preact)        |       |
-  |         |           |       |
-  |         |           |       |
-  |         |           v       |
-  |         |     _______       |
-  |         |---> Redis         |
+(Koajs + Preact)----    |       |
+  |                |    |       |
+  |                |    |       |
+  |                v    v       |
+  |               _______       |
+  |               Redis         |
   |               (cache)       |
   |                             |
   v                             v
