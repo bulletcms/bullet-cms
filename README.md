@@ -15,7 +15,7 @@ Varnish                Node Websockets Server
   v                     |       |
 ________________        |       |
 Node API Server         |       |
-(Koajs + Preact)----    |       |
+(Koajs + React)-----    |       |
   |                |    |       |
   |                |    |       |
   |                v    v       |
