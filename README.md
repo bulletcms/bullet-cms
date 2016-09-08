@@ -3,9 +3,9 @@ cms as fast as a bullet
 
 Tech stack:
 ```
-_________________________
+_____________________________
 Haproxy
-(load-balancer+anti-ddos)-------
+(load-balancer+rate-limiting)---
   |                            |
   v                            v
 ____________           ______________________
